@@ -9,6 +9,8 @@ export class CartState {
     cartSubTotal = $derived(this.cartItems.reduce((total, item) => total + (item.quantity * item.product.price), 0))
     cartSubTotalDisplay = $derived(`$${this.cartSubTotal.toFixed(2)}`)
 
+    cartInitialized = $state(false)
+
     // cart methods
     addToCart(product: Product) {
         // if item is in cart, up qty else add to cart
@@ -18,21 +20,26 @@ export class CartState {
 
         // show cart
         this.cartOpen = true
+
+        this.updateCartLocalStorage()
     }
 
     removeFromCart(id: number) {
         const index = this.cartItems.findIndex(i => i.product.id === id)
         this.cartItems.splice(index, 1)
+        this.updateCartLocalStorage()
     }
 
     incrementCartItemQty(id: number, qty: number) {
         const itemInCart = this.cartItems.find((item) => item.product.id === id);
         if (itemInCart) itemInCart.quantity += qty
+        this.updateCartLocalStorage()
     }
 
     decrementCartItemQty(id: number, qty: number) {
         const itemInCart = this.cartItems.find((item) => item.product.id === id);
         if (itemInCart) itemInCart.quantity -= qty
+        this.updateCartLocalStorage()
     }
 
     // cartOpen
@@ -40,7 +47,17 @@ export class CartState {
         this.cartOpen = !this.cartOpen
     }
 
-    // helpers
+    // local storage
+    initCartLocalStorage() {
+        const localCart = localStorage.getItem('cart')
+        if (localCart) this.cartItems = JSON.parse(localCart);
+        this.cartInitialized = true
+    }
+
+    updateCartLocalStorage() {
+        localStorage.setItem('cart', JSON.stringify(this.cartItems))
+    }
+
 }
 
 export const cartState = new CartState()

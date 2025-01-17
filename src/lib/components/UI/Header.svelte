@@ -6,6 +6,10 @@
 
 <header>
 	<h1>Shopping App</h1>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/products">Products</a></li>
+	</ul>
 	<div class="shopping-cart-container" class:open={cartState.cartOpen}>
 		<button
 			class="btn"
@@ -14,7 +18,7 @@
 			aria-label="View or close cart"
 			onclick={() => cartState.toggleCartOpen()}
 		>
-			Header Cart: {cartState.cartItems.length}
+			Header Cart: {cartState.cartInitialized ? cartState.cartItems.length : ''}
 		</button>
 		<div class="shopping-cart">
 			<h3>Cart Items</h3>

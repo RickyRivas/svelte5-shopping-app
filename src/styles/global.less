@@ -66,6 +66,13 @@ h6 {
     font-size: unit((@h6fs/20), em);
 }
 
+.container {
+    display: block;
+    width: 96%;
+    max-width: unit((1400/20), em);
+    margin: 0 auto;
+}
+
 .icon {
     width: 100%;
     height: auto;
@@ -88,5 +95,10 @@ h6 {
     &.active,
     &.open {
         background-color: green;
+    }
+
+    &:disabled {
+        background-color: gray;
+        color: #000;
     }
 }
