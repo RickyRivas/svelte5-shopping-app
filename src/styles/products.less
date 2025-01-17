@@ -1,0 +1,37 @@
+.products-catalog {
+    width: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 3em 1em;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+
+    @media only screen and (min-width:1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .catalog-product {
+        padding: 1em;
+        width: 100%;
+        .flex;
+        .jc(flex-start);
+        .ai(flex-start);
+        .fdir(column);
+        .shadow;
+        gap: 1em;
+
+        .thumbnail {
+            background-color: skyblue;
+            width: 100%;
+            .flexcenter;
+            height: (300/20em);
+
+            img {
+                min-width: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}

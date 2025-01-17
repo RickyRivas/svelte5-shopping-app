@@ -1,0 +1,35 @@
+.shopping-cart-container {
+    position: relative;
+
+    .shopping-cart {
+        .flex;
+        .fdir(column);
+        position: absolute;
+        top: calc(100%);
+        right: 0;
+        gap: 1em;
+        background-color: white;
+        padding: 1em;
+        .shadow;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .33s ease, transform .33s ease;
+        transform: translateY(100%);
+        min-width: 400px;
+
+        .shopping-cart-item {
+            .shadow;
+            .bc(#fff);
+            padding: 1em;
+            width: 100%;
+        }
+    }
+
+    &.open {
+        .shopping-cart {
+            pointer-events: all;
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+}

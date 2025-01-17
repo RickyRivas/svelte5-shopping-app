@@ -1,7 +1,7 @@
 <script>
 	import { cartState } from '$lib/cart-state.svelte';
 	import { fly } from 'svelte/transition';
-	import CartItemCard from './CartItemCard.svelte';
+	import CartItemCard from '../Cart/CartItemCard.svelte';
 </script>
 
 <header>

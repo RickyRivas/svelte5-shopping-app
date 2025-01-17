@@ -16,76 +16,66 @@ body {
     }
 }
 
-header {
-    .flex;
-    .jc(space-between);
-    .ai(center);
-    border-bottom: 1px solid #000;
-    padding: 1em;
-    position: relative;
-    z-index: 1;
+/* ===============================================
+	h family || hfam 
+=============================================== */
+@h2fs: 25;
+@h3fs: 22;
+@h4fs: 21;
+@h5fs: 20;
+@h6fs: 19;
+
+h1,
+h2:not(.title),
+h3:not(.title),
+h4,
+h5,
+h6 {
+    line-height: 1;
+    color: #212121;
+    text-rendering: auto;
+    text-transform: capitalize;
+    .bold;
 }
 
-.shopping-cart-container {
-    position: relative;
-
-    .shopping-cart {
-        .flex;
-        .fdir(column);
-        position: absolute;
-        top: calc(100%);
-        right: 0;
-        gap: 1em;
-        background-color: white;
-        padding: 1em;
-        .shadow;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity .33s ease, transform .33s ease;
-        transform: translateY(100%);
-
-        .shopping-cart-item {
-            .shadow;
-            .bc(#fff);
-            padding: 1em;
-            width: 100%;
-            min-width: 200px;
-        }
-    }
-
-    &.open {
-        .shopping-cart {
-            pointer-events: all;
-            opacity: 1;
-            transform: translateY(0%);
-        }
-    }
+h1 {
+    font-size: unit((23/20), em);
 }
 
-.products-catalog {
+h2:not(.title) {
+    font-size: unit((@h2fs/20), em);
+}
+
+h3:not(.title) {
+    font-size: unit((@h3fs/20), em);
+}
+
+h3.title {
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: unit((@h4fs/20), em);
+}
+
+h5 {
+    font-size: unit((@h5fs/20), em);
+}
+
+h6 {
+    font-size: unit((@h6fs/20), em);
+}
+
+.icon {
     width: 100%;
-    .flex;
-    .jc(center);
-    .ai(center);
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 3em 0;
-
-    .catalog-product {
-        padding: 1em;
-        width: calc(33% - 1em);
-        .flex;
-        .jc(center);
-        .ai(flex-start);
-        .fdir(column);
-        .shadow;
-        gap: 1em;
-    }
+    height: auto;
+    .ib;
 }
 
 .btn {
     .buttonreset;
-    display: block;
+    .ib;
+    .va(top);
     font-size: 12px;
     line-height: 44px;
     background-color: slateblue;

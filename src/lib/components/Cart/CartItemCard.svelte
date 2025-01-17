@@ -15,11 +15,15 @@
 	<p>{price} each</p>
 	<p>Product Quantity: {cartItem.quantity}</p>
 	<div class="cart-item-controls">
-		<button disabled={cartItem.quantity <= 1} onclick={() => cartState.decrementCartItemQty(id, 1)}
+		<button
+			class="btn"
+			disabled={cartItem.quantity <= 1}
+			onclick={() => cartState.decrementCartItemQty(id, 1)}
 			>-
 		</button>
-		<button onclick={() => cartState.removeFromCart(id)}>remove</button>
+		<button class="btn" onclick={() => cartState.removeFromCart(id)}>remove</button>
 		<button
+			class="btn"
 			disabled={cartItem.quantity >= stock}
 			onclick={() => cartState.incrementCartItemQty(id, 1)}
 			>+

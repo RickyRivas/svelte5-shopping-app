@@ -1,3 +1,65 @@
+// font-mixins
+.th() {
+    font-weight: 100;
+}
+
+.xlt() {
+    font-weight: 200;
+}
+
+.lt() {
+    font-weight: 300;
+}
+
+.roman() {
+    font-weight: 400;
+}
+
+.mbold() {
+    font-weight: 500;
+}
+
+.sbold() {
+    font-weight: 600;
+}
+
+.bold() {
+    font-weight: 700;
+}
+
+.xbold() {
+    font-weight: 800;
+}
+
+.ubold() {
+    font-weight: 900;
+}
+
+.black() {
+    font-weight: 900;
+}
+
+.italic() {
+    font-style: italic;
+}
+
+.upp() {
+    text-transform: uppercase;
+}
+
+.loww() {
+    text-transform: lowercase;
+}
+
+.noo() {
+    text-transform: none;
+}
+
+.normal() {
+    font-style: normal;
+}
+
+
 //word and paragraph mixins
 .ls(@spacing) {
     letter-spacing: @spacing;
@@ -81,6 +143,12 @@
 
 //align-items
 
+
+.flexcenter {
+    .flex;
+    .jc(center);
+    .ai(center);
+}
 
 // other
 .rounded(@radius) {
