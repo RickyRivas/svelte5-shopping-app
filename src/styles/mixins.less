@@ -1,0 +1,116 @@
+//word and paragraph mixins
+.ls(@spacing) {
+    letter-spacing: @spacing;
+}
+
+.lh(@val) {
+    line-height: @val;
+}
+
+.fs(@val) {
+    font-size: @val;
+}
+
+.aligncenter() {
+    text-align: center;
+}
+
+.alignright() {
+    text-align: right;
+}
+
+.alignleft() {
+    text-align: left;
+}
+
+.justify() {
+    text-align: justify;
+}
+
+// displays
+.show() {
+    display: block;
+}
+
+.hide() {
+    display: none;
+}
+
+.inline() {
+    display: inline;
+}
+
+.inline-block() {
+    display: inline-block;
+}
+
+.ib() {
+    display: inline-block;
+}
+
+.va(@args) {
+    vertical-align: @args;
+}
+
+//flex properties
+.flex() {
+    display: flex;
+}
+
+.if() {
+    display: inline-flex;
+}
+
+.inline-flex() {
+    display: inline-flex;
+}
+
+.fdir(@args) {
+    flex-direction: @args;
+}
+
+//flex-direction
+.jc(@args) {
+    justify-content: @args;
+}
+
+//justify-content
+.ai(@args) {
+    align-items: @args;
+}
+
+//align-items
+
+
+// other
+.rounded(@radius) {
+    border-radius: @radius;
+}
+
+.round() {
+    border-radius: 50%;
+}
+
+.bc(@color) {
+    background-color: @color;
+}
+
+.overlay() {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.buttonreset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+}
+
+.shadow {
+    box-shadow: @shadow;
+}
